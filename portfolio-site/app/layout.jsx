@@ -1,7 +1,6 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import '/styles/globals.css';
+import Nav from '/components/Nav';
+import Sidebar from '/components/Sidebar';
 
 export const metadata = {
   title: 'Sean Mannas Portfolio',
@@ -11,15 +10,17 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
-      <body>
+      <body className="flex h-full">
         <div className='main'>
           <div className='gradient' />
         </div>
 
-        <main className='app'>
+        <main className='app h-full min-h-full'>
           <Nav />
-          <SideBar />
-          { children }
+          <div className="flex w-full h-full">
+            <Sidebar />
+            { children }
+          </div>
         </main>
       </body>
     </html>
