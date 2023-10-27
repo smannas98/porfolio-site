@@ -1,0 +1,33 @@
+      <nav className="flex">
+      {/* Logo */}
+      <div className="position-absolute z-[1]">
+        <img src="https://placehold.co/120x120" className="rounded" />
+      </div>
+
+      {/* Nav links; separate out as separate button components */}
+            <ul className="navButtonList">
+              <li>
+                <button className="button">
+                  <span className="navButtonSlug">Button</span>
+                </button>
+              </li>
+              {/* cursor generated button */}
+            <li>
+                <button className="button hover:bg-red text-black font-bold py-3 px-8 rounded">
+                  <span className="transform skew-x-12">Button</span>
+                </button>
+              </li>
+
+              <li>
+                <button className="button hover:bg-red text-black font-bold py-3 px-8 rounded">
+                  <span className="transform skew-x-12">Button</span>
+                </button>
+              </li>
+
+              <li>
+                <button className="button hover:bg-red text-black font-bold py-3 px-8 rounded">
+                  <span className="transform skew-x-12">Button</span>
+                </button>
+              </li>
+            </ul> 
+            </nav>

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #123456;
+}
+
+.button {
+  @apply 
+  transform 
+  -skew-x-12 
+  bg-zinc-300 
+  bg-gradient-to-tr 
+  from-zinc-300 
+  to-zinc-500 
+  box-border 
+  border-black 
+  border-2 
+  border-opacity-0 
+  text-black 
+  font-bold 
+  py-3 
+  px-8 
+  rounded 
+}
+
+.button:hover {
+  @apply transform -skew-x-12 bg-gradient-to-tr from-zinc-300 to-zinc-600 
+}
+
+.button:active {
+  @apply border-opacity-100
+}
+
+.navBorder {
+  border-top: solid black 2px;
+}
+
+.navButtonSlug {
+  @apply transform skew-x-12
+}
+
+.navButtonList {
+  @apply 
+  flex 
+  items-end 
+  pl-10 
+  flex-grow 
+  bg-gradient-to-t 
+  from-zinc-300 
+  to-zinc-500 
+  text-xl 
+}
+
+.imageContainer {
+  @apply position-absolute z-[1]
+}
