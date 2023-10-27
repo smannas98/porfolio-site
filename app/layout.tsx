@@ -7,15 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 type ImageProps = {
   imgSrc: string,
-  imgText: string,
-  imgClass: string,
-  imgContainer: string
+  imgText: string
 }
 interface ButtonProps {
   buttonUrl: string,
-  buttonSlug: string,
-  buttonClass: string,
-  slugClass: string
+  buttonSlug: string
 }
 
 export const metadata: Metadata = {
@@ -31,28 +27,18 @@ export default function RootLayout({
   
   const profileImage = {
     imgSrc: "https://placehold.co/120x120",
-    imgContainer: "imageContainer",
     imgText: "profile picture",
-    imgClass: "rounded"
-  }
-
-  const listClass = "navButtonList"
+  };
 
   const navList = [{
     buttonUrl: "/About",
     buttonSlug: "About Me",
-    buttonClass: "button",
-    slugClass: "navButtonSlug"
   }, {
     buttonUrl: "/Projects",
     buttonSlug: "Projects",
-    buttonClass: "button",
-    slugClass: "navButtonSlug"
   }, {
     buttonUrl: "/Contact",
     buttonSlug: "Contact Me",
-    buttonClass: "button",
-    slugClass: "navButtonSlug"
   }];
   return (
     <html lang="en" className="min-h-vh sm:h-full">
@@ -62,7 +48,6 @@ export default function RootLayout({
           <TopNav
             buttonProps={navList}
             imageProps={profileImage}
-            listCLass={listClass}
           />
           <section className="flex flex-grow h-full">
             {/* Social links sidebar; separate out as separate component; also separate out each link as component with image prop */}

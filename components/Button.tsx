@@ -1,16 +1,14 @@
 import React from 'react'
 
 type Props = {
-  buttonClass: string,
-  slug: string,
-  slugClass: string
+  slug: string
 
 }
 
 const Button = (props: Props) => {
   return (
-    <button className={props.buttonClass}>
-      <span className={props.slugClass}>{props.slug}</span>
+    <button className="button">
+      <span className="navButtonSlug">{props.slug}</span>
     </button>
   )
 }

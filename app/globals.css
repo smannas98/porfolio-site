@@ -52,7 +52,3 @@ body {
   to-zinc-500 
   text-xl 
 }
-
-.imageContainer {
-  @apply position-absolute z-[1]
-}

@@ -5,8 +5,6 @@ import Button from './Button'
 interface ButtonProps {
   buttonUrl: string,
   buttonSlug: string,
-  buttonClass: string,
-  slugClass: string,
 }
 
 type ImageProps = {
@@ -18,14 +16,14 @@ type ImageProps = {
 
 type Props = ButtonProps[];
 
-const TopNav = (buttonProps: Props , imageProps: ImageProps, listClass: string) => {
+const TopNav = (buttonProps: Props , imageProps: ImageProps) => {
   return (
     <nav className="flex">
       {/* Logo */}
       {/* <div className="position-absolute z-[1]">
         <img src="https://placehold.co/120x120" />
       </div> */}
-      <div className={imageProps.imgContainer}>
+      <div className="position-absolute z-[1]">
         <Image
           src={imageProps.imgSrc}
           alt={imageProps.imgText}
@@ -34,7 +32,7 @@ const TopNav = (buttonProps: Props , imageProps: ImageProps, listClass: string) 
       </div>
 
       {/* Nav links; separate out as separate button components */}
-      <ul className={listClass}>
+      <ul className="navButtonList">
         {/* <li>
           <button className="button hover:bg-red text-black font-bold py-3 px-8 rounded ml-12">
             <span className="transform skew-x-12">Button</span>
@@ -42,27 +40,18 @@ const TopNav = (buttonProps: Props , imageProps: ImageProps, listClass: string) 
         </li> */}
 
         {/* generated button */}
-        {
-          buttonProps.map((button: ButtonProps) => (
-            <li
-              key={button.buttonSlug}
-              className={button.buttonClass}
-            >
-              <Link
-                href={button.buttonUrl}
-              >
-                <Button
-                  slug={button.buttonSlug}
-                  buttonClass={button.buttonClass}
-                  slugClass={button.slugClass}
-                />
-              </Link>
-            </li>
-          ))
-        }
+        {buttonProps.map((button: ButtonProps) => (
+          <li key={button.buttonSlug}>
+            <Link href={button.buttonUrl}>
+              <Button
+                slug={button.buttonSlug}
+              />
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
-  )
+  );
 }
 
 export default TopNav
