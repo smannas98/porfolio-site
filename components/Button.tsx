@@ -21,7 +21,8 @@ const Button = (props: Props) => {
   font-bold 
   py-3 
   px-8 
-  rounded"
+  rounded
+  button"
     >
       <span className="transform skew-x-12">{props.slug}</span>
     </button>
