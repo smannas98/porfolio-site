@@ -47,7 +47,10 @@ export default function RootLayout({
               {children}
             </div>
           </section>
-          <footer className="flex bg-red-600 footer justify-center w-screen absolute h-screen">class</footer>
+          <footer className="flex bg-red-600 footer justify-center w-screen absolute h-screen overflow-hidden">
+            <div className="w-full h-full absolute bottom-0 bg-red-600 rounded-full"></div>
+            <div className="w-full h-1/2 absolute bottom-0 bg-white"></div>
+          </footer>
         </main>
       </body>
     </html>

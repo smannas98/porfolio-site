@@ -13,3 +13,17 @@ body {
 .footer {
   border-radius: 50%;
 }
+
+/* .footer:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100vw;
+  margin-left: -100vw;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: red;
+} */
