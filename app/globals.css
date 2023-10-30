@@ -6,14 +6,10 @@ body {
   background: #123456;
 }
 
-.button:hover {
-  @apply transform -skew-x-12 bg-gradient-to-tr from-zinc-300 to-zinc-600 
-}
-
-.button:active {
-  @apply border-opacity-100
-}
-
 .navBorder {
   border-top: solid black 2px;
+}
+
+.footer {
+  border-radius: 50%;
 }

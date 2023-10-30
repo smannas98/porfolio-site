@@ -1,22 +1,19 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Button from './Button'
+import Image from "next/image";
+import Link from "next/link";
+import Button from "./button";
 
-interface ButtonProps {
-  buttonUrl: string,
-  buttonSlug: string,
-}
+type TopNavProps = {
+  readonly img: {
+    src: string;
+    text: string;
+  };
+  readonly links: {
+    url: string;
+    slug: string;
+  }[];
+};
 
-type ImageProps = {
-  imgSrc: string,
-  imgText: string,
-  imgClass: string,
-  imgContainer: string
-}
-
-type Props = ButtonProps[];
-
-const TopNav = (buttonProps: Props , imageProps: ImageProps) => {
+const TopNav = ({ img, links }: TopNavProps) => {
   return (
     <nav className="flex">
       {/* Logo */}
@@ -24,11 +21,7 @@ const TopNav = (buttonProps: Props , imageProps: ImageProps) => {
         <img src="https://placehold.co/120x120" />
       </div> */}
       <div className="position-absolute z-[1]">
-        <Image
-          src={imageProps.imgSrc}
-          alt={imageProps.imgText}
-          className={imageProps.imgClass}
-        />
+        <Image src={img.src} alt={img.text} width={120} height={120} />
       </div>
 
       {/* Nav links; separate out as separate button components */}
@@ -40,7 +33,8 @@ const TopNav = (buttonProps: Props , imageProps: ImageProps) => {
   bg-gradient-to-t 
   from-zinc-300 
   to-zinc-500 
-  text-xl">
+  text-xl"
+      >
         {/* <li>
           <button className="button hover:bg-red text-black font-bold py-3 px-8 rounded ml-12">
             <span className="transform skew-x-12">Button</span>
@@ -48,16 +42,16 @@ const TopNav = (buttonProps: Props , imageProps: ImageProps) => {
         </li> */}
 
         {/* generated button */}
-        {buttonProps.map((button: ButtonProps) => (
-          <li key={button.buttonSlug}>
-            <Link href={button.buttonUrl}>
-              <Button slug={button.buttonSlug} />
+        {links.map((link) => (
+          <li key={link.slug}>
+            <Link href={link.url}>
+              <Button>{link.slug}</Button>
             </Link>
           </li>
         ))}
       </ul>
     </nav>
   );
-}
+};
 
-export default TopNav
+export default TopNav;
